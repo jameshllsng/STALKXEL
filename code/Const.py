@@ -17,11 +17,12 @@ ENTITY_SPEED = {
   'Level1Bg3': 3,
   'Level1Bg4': 4,
   'Level1Bg5': 5,
-  'Level1Bg6': 6,
+  'Level1Bg6': 0,
   'Level2Bg0': 0,
   'Level2Bg1': 1,
   'Level2Bg2': 2,
   'Level2Bg3': 3,
+  'Level2Bg4': 0,
   'Player1': 5,
   'Player1Shot': 2,
   'Player2': 5,
@@ -44,6 +45,7 @@ ENTITY_HEALTH = {
   'Level2Bg1': 999,
   'Level2Bg2': 999,
   'Level2Bg3': 999,
+  'Level2Bg4': 999,
   'Player1': 100,
   'Player1Shot': 1,
   'Player2': 100,
@@ -66,6 +68,7 @@ ENTITY_DAMAGE = {
   'Level2Bg1': 0,
   'Level2Bg2': 0,
   'Level2Bg3': 0,
+  'Level2Bg4': 0,
   'Player1': 1,
   'Player1Shot': 25,
   'Player2': 1,
@@ -88,6 +91,7 @@ ENTITY_SCORE = {
   'Level2Bg1': 0,
   'Level2Bg2': 0,
   'Level2Bg3': 0,
+  'Level2Bg4': 0,
   'Player1': 0,
   'Player1Shot': 0,
   'Player2': 0,
@@ -103,6 +107,18 @@ ENTITY_SHOT_DELAY = {
     'Player2': 30,
     'Enemy1': 80,
     'Enemy2': 90,
+}
+
+# G
+
+GRAVITY_INTENSITY = {
+  'Player1': 1
+}
+
+# J
+
+JUMP_HEIGHT = {
+  'Player1': 15
 }
 
 # M
@@ -132,8 +148,8 @@ TIMEOUT_STEP = 100 #100ms
 TIMEOUT_LEVEL = 20000 #20 segundos
 
 # W
-WIN_WIDTH = 576
-WIN_HEIGHT = 324
+WIN_WIDTH = 800
+WIN_HEIGHT = 450
 
 # S
 SCORE_POS = {'Title': (WIN_WIDTH / 2, 50),
@@ -151,3 +167,9 @@ SCORE_POS = {'Title': (WIN_WIDTH / 2, 50),
              8: (WIN_WIDTH / 2, 270),
              9: (WIN_WIDTH / 2, 290),
             }
+
+# V
+VERTICAL_SPEED = {
+  'Player1': 15
+}
+
