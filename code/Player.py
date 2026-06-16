@@ -22,7 +22,7 @@ class Player(Entity):
         self.g_intensity = GRAVITY_INTENSITY[self.name]
         self.jumping = False
         self.jump_allowed = True
-        self.shot_delay = ENTITY_SHOT_DELAY[self.name]
+        self.shot_delay = 0
         self.attack_counter = 0
         self.current_frame = 0
         self.frame_counter = 0
@@ -101,18 +101,19 @@ class Player(Entity):
             self.attack_counter -= 1
 
     def shoot(self):
-        self.shot_delay -= 1
-        if self.shot_delay == 0:
+        pressed_key = pygame.key.get_pressed()
+        if self.shot_delay > 0:
+            self.shot_delay -= 1
+        feet_position = self.rect.midbottom
+        if pressed_key[PLAYER_KEY_SHOOT[self.name]] and self.shot_delay == 0:
+            self.surf = self.surf_shot
             self.shot_delay = ENTITY_SHOT_DELAY[self.name]
-            pressed_key = pygame.key.get_pressed()
-            feet_position = self.rect.midbottom
-            if pressed_key[PLAYER_KEY_SHOOT[self.name]]:
-                self.surf = self.surf_shot
-                self.attack_counter = 10
-                if self.gaze_direction == 'Left':
-                    self.surf = pygame.transform.flip(self.surf_shot, True, False)
-                self.rect = self.surf.get_rect(midbottom=feet_position)
-                if self.gaze_direction == 'Right':
-                    return PlayerShot(name=f'{self.name}Shot', position=(self.rect.right, self.rect.top + 10), direction='Right')
-                elif self.gaze_direction == 'Left':
-                    return PlayerShot(name=f'{self.name}Shot', position=(self.rect.left - 44, self.rect.top + 10), direction='Left')
+            self.attack_counter = 10
+            if self.gaze_direction == 'Left':
+                self.surf = pygame.transform.flip(self.surf_shot, True, False)
+            self.rect = self.surf.get_rect(midbottom=feet_position)
+            if self.gaze_direction == 'Right':
+                return PlayerShot(name=f'{self.name}Shot', position=(self.rect.right, self.rect.top + 10), direction='Right')
+            elif self.gaze_direction == 'Left':
+                return PlayerShot(name=f'{self.name}Shot', position=(self.rect.left - 44, self.rect.top + 10), direction='Left')
+        

@@ -3,7 +3,7 @@
 from pygame import Rect, Surface
 from pygame.font import Font
 import pygame.image
-from code.Const import C_GREEN, C_ORANGE, C_WHITE, C_YELLOW, MENU_OPTION, WIN_WIDTH
+from code.Const import C_CYAN, C_GREEN, C_WHITE, C_YELLOW, MENU_OPTION, WIN_WIDTH
 
 class Menu:
     def __init__(self, window):
@@ -18,6 +18,16 @@ class Menu:
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
             self.menu_text(50, "STALKXEL", C_GREEN, ((WIN_WIDTH/2), 70))
+            self.menu_text(20, "Controls:", C_CYAN, (100, 275))
+            self.menu_text(20, "ARROWS - Move / Jump", C_CYAN, (125, 295))
+            self.menu_text(20, "RIGHT CTRL - Shoot", C_CYAN, (115, 315))
+            self.menu_text(20, "ENTER - Select", C_CYAN, (90, 335))
+            self.menu_text(20, "ESC - Back (on score screen)", C_CYAN, (175, 355))
+            
+            self.menu_text(20, "Objective:", C_CYAN, (700, 275))
+            self.menu_text(20, "Reach the the other ", C_CYAN, (690, 295))
+            self.menu_text(20, "side of the map", C_CYAN, (680, 315))
+            self.menu_text(20, "until timeout", C_CYAN, (690, 335))
             
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:

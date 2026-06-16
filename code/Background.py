@@ -1,7 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from code.Const import ENTITY_SPEED, WIN_WIDTH
+import pygame
+
+from code.Const import ENTITY_SPEED, PLAYER_KEY_RIGHT, WIN_WIDTH
 from code.Entity import Entity
 
 class Background(Entity):
@@ -9,7 +11,9 @@ class Background(Entity):
         super().__init__(name, position)
 
     def move(self, ):
-        self.rect.centerx -= ENTITY_SPEED[self.name]
-        if self.rect.right <= 0:
-            self.rect.left = WIN_WIDTH    
+        pressed_key = pygame.key.get_pressed()
+        if pressed_key[PLAYER_KEY_RIGHT['Player1']]:
+            self.rect.centerx -= ENTITY_SPEED[self.name]
+            if self.rect.right <= 0:
+                self.rect.left = WIN_WIDTH    
         
