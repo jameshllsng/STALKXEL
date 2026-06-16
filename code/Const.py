@@ -106,7 +106,7 @@ PLAYER_KEY_RIGHT = {'Player1': pygame.K_RIGHT}
 PLAYER_KEY_SHOOT = {'Player1': pygame.K_RCTRL}
 
 # S
-SPAWN_TIME = 1000
+SPAWN_TIME = 1500
 
 # T
 TIMEOUT_STEP = 100 #100ms

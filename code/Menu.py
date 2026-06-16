@@ -25,9 +25,9 @@ class Menu:
             self.menu_text(20, "ESC - Back (on score screen)", C_CYAN, (175, 355))
             
             self.menu_text(20, "Objective:", C_CYAN, (700, 275))
-            self.menu_text(20, "Reach the the other ", C_CYAN, (690, 295))
+            self.menu_text(20, "Reach the other ", C_CYAN, (690, 295))
             self.menu_text(20, "side of the map", C_CYAN, (680, 315))
-            self.menu_text(20, "until timeout", C_CYAN, (690, 335))
+            self.menu_text(20, "before timeout", C_CYAN, (690, 335))
             
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
