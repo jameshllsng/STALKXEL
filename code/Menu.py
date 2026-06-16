@@ -3,7 +3,7 @@
 from pygame import Rect, Surface
 from pygame.font import Font
 import pygame.image
-from code.Const import C_ORANGE, C_WHITE, C_YELLOW, MENU_OPTION, WIN_WIDTH
+from code.Const import C_GREEN, C_ORANGE, C_WHITE, C_YELLOW, MENU_OPTION, WIN_WIDTH
 
 class Menu:
     def __init__(self, window):
@@ -13,11 +13,11 @@ class Menu:
 
     def run(self, ):
         menu_option = 0
-        pygame.mixer_music.load('./asset/Menu.wav')
+        pygame.mixer_music.load('./asset/Menu.mp3')
         pygame.mixer_music.play(-1)
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(50, "Dumont", C_ORANGE, ((WIN_WIDTH/2), 70))
+            self.menu_text(50, "STALKXEL", C_GREEN, ((WIN_WIDTH/2), 70))
             
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
